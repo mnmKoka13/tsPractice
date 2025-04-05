@@ -1,3 +1,5 @@
+import { createInterface } from "readline";
+
 let greeting: string, target: string;
 greeting = "Hello, ";
 target = "World!";
@@ -69,4 +71,35 @@ const val2: undefined = undefined;
 
 console.log(val1, val2);
 
-// ==================
+// =================
+
+const lr = createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+lr.question('数値を入力してください：', (line) => {
+	const num = Number(line);
+	console.log(num + 1000);
+	lr.close();
+})
+
+const num1 = Number(true); // -> 1
+console.log(num1);
+
+const num2 = Number(false); // -> 0
+console.log(num2);
+
+const num3 = Number(null); // -> 0
+console.log(num3);
+
+const num4 = Number(undefined); // -> NaN
+console.log(num4);
+
+const bigint1 = BigInt(123); // -> 123n
+const bigint2 = BigInt(true); // -> 1n
+console.log(bigint1, bigint2);
+
+// const bigint3 = BigInt("fooooo"); // -> ランタイムエラー
+
+// =================
