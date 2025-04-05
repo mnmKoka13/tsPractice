@@ -103,3 +103,17 @@ console.log(bigint1, bigint2);
 // const bigint3 = BigInt("fooooo"); // -> ランタイムエラー
 
 // =================
+
+const str1_1 = String(1234.5);
+console.log(str1_1); // -> "1234.5"
+
+const str2_2 = String(true);
+console.log(str2_2); // -> "true"
+
+const str3_3 = String(null);
+console.log(str3_3); // -> "null"
+
+const str4_4 = String(undefined);
+console.log(str4_4); // -> "undefined"
+
+// ==================
